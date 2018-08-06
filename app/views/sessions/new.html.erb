@@ -1,0 +1,6 @@
+<%= form_for(:session, url: sessions_path) do |f| %>
+  email : <%= f.text_field :email %>
+  passeword : <%= f.password_field :password %>
+  <%= f.submit %>
+<% end %>
+  

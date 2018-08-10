@@ -1,0 +1,12 @@
+<h1>タスク新規作成</h1>
+
+<%= form_for @task, url: project_tasks_path  do |f| %>
+  タイトル : <%= f.text_field :title %> <br>
+  本文 : <%= f.text_field :body %><br>
+  開始 : <%= f.date_select :start_date %><br>
+  終了 : <%= f.date_select :end_date %><br>
+  ステータス : <%= f.select :status, Task::STATUS_OPTIONS.invert, { prompt: "選択してください"} %><br>
+  優先度 : <%= f.select :priority, Task::PRIORITY_OPTIONS.invert, { prompt: "選択してください"} %><br>
+  アサイン : <%= f.select :assign, @users.map{|u| [u.name, u.id]} %><br>
+  <%= f.submit %>
+<% end %>

@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   end
   
   def show
+    
     render plain: "show"
   end
   

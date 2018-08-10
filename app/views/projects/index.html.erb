@@ -1,0 +1,7 @@
+<%= link_to '新規作成', new_project_path %>
+
+<ul>
+<% @projects.each do |p| %>
+  <li><%= link_to p.name, project_path(p) %></li>
+<% end %>
+</ul>

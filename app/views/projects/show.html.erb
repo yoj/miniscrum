@@ -1,0 +1,20 @@
+<%= link_to "タスク作成", new_project_task_path(@project) %>
+
+<table>
+  <tr>
+    <td>名前</td><td><%= @project.name %></td>
+  </tr>
+  <tr>
+    <td>詳細</td><td><%= @project.description %></td>
+  </tr>
+</table>
+
+
+<h2>タスク一覧</h2>
+<% if !@tasks.empty? %>
+  <ul>
+    <% @tasks.each do |t| %>
+    <li><%= t.name %></li>
+    <% end %>
+  </ul>
+<% end %>
